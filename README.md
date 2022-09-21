@@ -23,3 +23,34 @@ This repository helps you augmenting text data for nlp projects. The main purpos
 
 
 ## Executing all the augmentation functions
+
+For running the augmentations on your data, first clone the project: 
+
+````
+git clone https://github.com/bonells96/text-augmentation.git
+````
+
+Then store you data in the data folder as a **.json** file. Your data should be a dictionnary where **text samples** are the **keys** and the **label** of each text are the **values**.
+
+Example: Below you will see an example of data dictionnary. The labels in these case are 1 or 0. 1 means that the text is a request and 0 means that it is not a request.
+
+```
+{"Please join me":1, "You must do your homework":1, "You should follow her":0, "You have to study more":1,
+                "What is your name?":0, "Are you happy with your new job?":0, "I request you to give me your phone":1, 
+                "he is always requesting":0, "I like this hotel":0, "Give me my glasses":1, "I am 13 years old":0}
+```
+
+Once your data is stored in the data folder, enter in the repo folder and execute the code with the command:
+
+````
+python run_augmentation.py
+````
+
+It will give you this output:
+
+```
+INFO:root:Loading data...
+INFO:root:Augmenting data...
+INFO:root:Your original data had 11 samples and your new data has 54 samples. The process lasted 16.7396080493927 seconds
+INFO:root:Saving datafile: data_augmented.json in /Users/alejandrobonell/text-augmentation/output directory
+```
